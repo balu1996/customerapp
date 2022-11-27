@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: balucustomerapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: balucustomerapp
+  template:
+    metadata:
+      labels:
+        app: balucustomerapp 
+    spec:
+      containers:
+        - name: balucustomerapp 
+          image: sampl.azurecr.io/balucustomerapp
+          ports:
+          - containerPort: 8080
